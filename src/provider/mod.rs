@@ -159,7 +159,7 @@ pub enum ProviderError {
     #[error("resource not found: if an item does not appear in our records, it does not exist!")]
     NotFound,
     /// Any errors that occur due to IO issues. Contains the underlying IO `Error`
-    #[error("resource could not be loaded")]
+    #[error("resource could not be loaded: {0}")]
     Io(#[from] std::io::Error),
     /// The resource being created already exists in the system
     #[error("resource already exists")]
